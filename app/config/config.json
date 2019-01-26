@@ -18,8 +18,8 @@
 	"production": {
 		"username": "root",
 		"password": "ppshein123456",
-		"database": "database_production",
-		"host": "db",
+		"database": "ufinitydatabase",
+		"host": "ufinityinstance.cf63acvqghpw.ap-southeast-1.rds.amazonaws.com",
 		"dialect": "mysql",
 		"logging": false
 	}
