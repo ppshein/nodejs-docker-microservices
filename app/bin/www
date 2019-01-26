@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Stop server"
+forever stopall
+
+echo "Updating"
+git fetch
+git reset --hard HEAD
+git checkout production
+git pull origin production
+
+
+echo "start server"
+forever start ./bin/server.js

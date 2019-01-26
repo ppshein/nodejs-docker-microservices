@@ -1,0 +1,27 @@
+version: '3'
+services:
+  node:
+    build: ./app
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MYSQL_HOST=ufinity-mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=ppshein123456
+    ports:
+      - "3000:3000"
+    networks:
+    - my-bridge-network
+    depends_on:
+      - "${MYSQL_HOST}"
+    container_name: ufinity-api
+  db:
+    image: mysql:8.0.14
+    environment:
+      - MYSQL_ROOT_PASSWORD=ppshein123456
+    networks:
+    - my-bridge-network
+    container_name: ufinity-mysql
+networks:
+  my-bridge-network:
+    driver: bridge

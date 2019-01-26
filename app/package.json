@@ -1,0 +1,31 @@
+{
+	"name": "ufinity",
+	"version": "1.0.0",
+	"description": "Registration Process by NodeJS",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"docker": "NODE_ENV=production sequelize db:create && sequelize db:migrate && nodemon ./bin/server.js",
+		"start": "NODE_ENV=development sequelize db:create && sequelize db:migrate && nodemon ./bin/server.js",
+		"test": "NODE_ENV=staging sequelize db:create && sequelize db:migrate && mocha ./routes/api/ufinity/*.spec.js"
+	},
+	"dependencies": {
+		"bluebird": "^3.5.3",
+		"body-parser": "^1.18.3",
+		"cookie-parser": "^1.4.3",
+		"express": "^4.16.4",
+		"fs": "^0.0.1-security",
+		"morgan": "^1.9.1",
+		"mysql2": "^1.6.4",
+		"nodemon": "^1.18.9",
+		"path": "^0.12.7",
+		"sequelize": "^4.42.0",
+		"sequelize-cli": "^5.4.0",
+		"validator": "^10.11.0"
+	},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^5.2.0",
+		"request": "^2.88.0"
+	}
+}
