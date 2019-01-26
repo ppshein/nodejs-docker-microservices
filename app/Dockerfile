@@ -4,4 +4,4 @@ COPY ./ /var/www
 WORKDIR /var/www/
 RUN yarn install && yarn add sequelize-cli -g
 EXPOSE 3000
-CMD /bin/bash ./wait-for-it.sh ufinity-mysql:3306 -- npm run docker
+ENTRYPOINT [ "npm", "run", "docker" ]

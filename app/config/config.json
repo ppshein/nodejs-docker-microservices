@@ -19,7 +19,7 @@
 		"username": "root",
 		"password": "ppshein123456",
 		"database": "database_production",
-		"host": "ufinity-mysql",
+		"host": "db",
 		"dialect": "mysql",
 		"logging": false
 	}
