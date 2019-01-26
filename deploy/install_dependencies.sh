@@ -7,3 +7,5 @@ curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 yum install -y nodejs
 # install pm2 to restart node app
 npm i -g pm2@2.4.3
+
+npm install && npm i sequelize-cli

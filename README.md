@@ -61,4 +61,4 @@ To run this project, `npm start`
 
 To unit testing, `npm test`
 
-To build docker images, `docker-compose build` & `docker-compose up`
+To test server locally, use docker images, `docker-compose build` & `docker-compose up`
