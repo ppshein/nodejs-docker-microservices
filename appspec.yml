@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /app
-    destination: /home/ec2-user/
+    destination: /home/ec2-user/ufinity-test
 hooks:
   BeforeInstall:
     - location: ./deploy/install_dependencies.sh
