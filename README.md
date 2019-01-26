@@ -34,6 +34,9 @@ NodeJS knowledge test.
 │   ├── utils
 │   │   └── validation.js
 │   └── wait-for-it.sh
+├── db
+│   ├── Dockerfile
+│   └── init_db.sql
 └── docker-compose.yml
 ```
 
@@ -58,4 +61,4 @@ To run this project, `npm start`
 
 To unit testing, `npm test`
 
-To build docker images, `docker-compose up`
+To build docker images, `docker-compose build` & `docker-compose up`
