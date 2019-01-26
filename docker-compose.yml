@@ -1,19 +1,18 @@
-version: "3"
+version: '2.1'
 services:
   db:
-    image: mariadb
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=ppshein123456
-      - MYSQL_DATABASE=database_production
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=ppshein123456
-    networks:
-      - ufinity
+      build: ./db
+      networks:
+        - ufinity
+      environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      healthcheck:
+          test: "exit 0"
   node:
     build: ./app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - 3000:3000
     networks:

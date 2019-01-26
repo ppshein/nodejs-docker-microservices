@@ -22,5 +22,13 @@
 		"host": "ufinityinstance.cf63acvqghpw.ap-southeast-1.rds.amazonaws.com",
 		"dialect": "mysql",
 		"logging": false
+	},
+	"docker": {
+		"username": "root",
+		"password": "ppshein123456",
+		"database": "database_docker",
+		"host": "db",
+		"dialect": "mysql",
+		"logging": false
 	}
 }

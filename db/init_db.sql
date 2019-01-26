@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS database_docker;
+GRANT ALL PRIVILEGES on database_docker.*
+TO 'root'@'%' IDENTIFIED BY 'ppshein123456'
+WITH GRANT OPTION;

@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"docker": "NODE_ENV=production sequelize db:create && sequelize db:migrate && nodemon ./bin/server.js",
+		"docker": "NODE_ENV=docker sequelize db:create && sequelize db:migrate && nodemon ./bin/server.js",
+		"aws": "NODE_ENV=production sequelize db:create && sequelize db:migrate && nodemon ./bin/server.js",
 		"start": "NODE_ENV=development sequelize db:create && sequelize db:migrate && nodemon ./bin/server.js",
 		"test": "NODE_ENV=staging sequelize db:create && sequelize db:migrate && mocha ./routes/api/ufinity/*.spec.js"
 	},
