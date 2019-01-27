@@ -57,8 +57,8 @@ exports.getRetrieveforNotifications = (body) => {
 
     function formattedNotifications(response) {
         var registered = {};
-        const byTeacher = response[0].students.map(student =>  student.name);
-        const byNotiTeacher = response[1].map(student => student.name);
+        const byTeacher = response[0] && response[0].students ? response[0].students.map(student =>  student.name) : [];
+        const byNotiTeacher = response[1] ? response[1].map(student => student.name) : [];
         registered.recipients = [
             ...new Set([...byTeacher, ...byNotiTeacher])
         ];
