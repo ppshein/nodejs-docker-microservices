@@ -3,16 +3,13 @@
 const q = require('bluebird');
 const { Teacher, Student } = require('../models')
 
+
 exports.allRegisteredStudents = async (teacherIds) => {
     return await findRegisteredStudentsByTeachers(teacherIds).then(formattedStudents);
     function formattedStudents(regStudents) {
         var registered = {};
-        registered.students = [];
-        regStudents.map((val) => {
-            val.students.map((student) => {
-                registered.students.push(student.name);
-            });
-        });
+        const students = regStudents.map(val => val.students.map(student => student.name))[0];
+        registered.students = students;
         return registered;
     }
 };
@@ -20,11 +17,7 @@ exports.allRegisteredStudents = async (teacherIds) => {
 exports.registeredStudents = async (registered) => {
     return await findOrCreateTeacher(registered.teacher).then(registeredStudents);
     function registeredStudents(teacher) {
-        registered.students.map((student) => {
-            Student.create({name: student}).then((newStudent) => {
-                teacher.addStudents(newStudent);
-            });
-        });
+        registered.students.map(student => Student.create({name: student}).then(newStudent => teacher.addStudents(newStudent)));
     }
 };
 
@@ -64,13 +57,11 @@ exports.getRetrieveforNotifications = (body) => {
 
     function formattedNotifications(response) {
         var registered = {};
-        registered.recipients = [];
-        response[0].students.map((student) => {
-            registered.recipients.push(student.name);
-        });
-        response[1].map((student) => {
-            registered.recipients.push(student.name);
-        });
+        const byTeacher = response[0].students.map(student =>  student.name);
+        const byNotiTeacher = response[1].map(student => student.name);
+        registered.recipients = [
+            ...new Set([...byTeacher, ...byNotiTeacher])
+        ];
         return registered;
     }
 
