@@ -47,7 +47,7 @@ NodeJS knowledge test.
 * Docker
 
 ## Installation
-1. To run NodeJS locally, you must have to install `yarn` first and install all dependencies
+1. To run NodeJS locally without docker, you must have to install `yarn` first and install all dependencies
 ```
     yarn install
     yarn add sequelize-cli -g

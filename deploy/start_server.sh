@@ -14,4 +14,4 @@ cd "$APPLICATION_DIRECTORY"
 #sequelize db:create && sequelize db:migrate
 
 # actually start the server
-sudo pm2 start $APPLICATION_DIRECTORY/bin/server.js -i 0 --name "ufinity-test"
+sudo forever start $APPLICATION_DIRECTORY/bin/server.js -i 0 --name "ufinity-test"

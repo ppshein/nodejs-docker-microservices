@@ -1,11 +1,14 @@
 #!/bin/bash
 # update yum just in case
 yum update -y
-# get node into yum
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
-# install node and npm in one line
-yum install -y nodejs
-# install pm2 to restart node app
-npm i -g pm2@2.4.3
 
-npm install && npm i sequelize-cli
+# get node into yum
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
+# install node and npm in one line
+nvm install node
+
+# install forever to restart node app
+npm install -g forever
+
+npm install && npm -g sequelize-cli
