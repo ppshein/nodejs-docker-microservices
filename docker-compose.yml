@@ -7,7 +7,7 @@ services:
     ports:
       - 3306:3306
     networks:
-      - ufinity
+      - ppshein
     environment:
         - MYSQL_ROOT_PASSWORD=ppshein123456
         - MYSQL_ALLOW_EMPTY_PASSWORD=yes
@@ -21,6 +21,6 @@ services:
     ports:
       - 3000:3000
     networks:
-      - ufinity
+      - ppshein
 networks:
-  ufinity:
+  ppshein:
